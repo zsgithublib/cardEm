@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar text-center color="purple">
+    <ion-title>
+       <ion-icon name="card"></ion-icon> Card Em
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<!-- <p>Scanned Text: {{scannedText}}</p>
+	<p>DOB: {{dob}}</p>
+	<p>Formatted DOB: {{formattedDob}}</p>
+	<p>Age: {{age}}</p> -->
+	<div *ngIf="name != '' " id="results">
+		<p>{{name}}</p>
+		<p>HEIGHT: {{height}}</p>
+		<p>AGE: {{age}}</p>
+		<p>{{checkit}}</p>
+	</div>
+	<!--<ion-img src="http://www.healthcaresouthflorida.com/wp-content/uploads/2014/06/fingerprint.png"></ion-img>-->
+
+	<!--
+		use *ngIf="expression" statement to hide scanner placeholder image once data is retreived.
+		Add button to scan again if necessary
+		Add splash screen with logo as well
+    <ion-img src="http://t2.ftcdn.net/jpg/00/51/83/93/400_F_51839386_zpb51oT4u6ZqgZ0stTarp0TAVG8cYiGO.jpg"></ion-img>
+	-->
+	<div *ngIf="name == ''">
+    <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/59267-200.png">
+		<button ion-button full (click)="scanCard()" ion-button color="white">Scan ID Card</button>
+	</div>
+
+  <ion-item>
+    <ion-label>Check if user over</ion-label>
+    <ion-select [(ngModel)]="ageToCheck" multiple="false">
+      <ion-option *ngFor="let age of ages" [value]="age"></ion-option>
+      <!-- <ion-option>18</ion-option>
+      <ion-option>21</ion-option> -->
+    </ion-select>
+  </ion-item>
+
+
+  <!-- <div class="scanResults">
+		<p>Jim Johnson</p>
+    <p>HEIGHT: 5'7"</p>
+    <p>AGE: 23</p>
+    <p>Met age requirements</p>
+	</div>
+  <button ion-button full (click)="scanCard()" ion-button color="white">Scan Card</button> -->
+</ion-content>

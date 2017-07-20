@@ -1,0 +1,46 @@
+.ios, .md {
+
+  page-home {
+
+      $text-color: #fff;
+
+      img {
+          width:100%;
+          margin: auto;
+      }
+
+      body{
+          background-color: #3B3B58;
+          /*background-color: #387ef5*/
+      }
+
+      .content-ios{
+          background-color: #3B3B58;
+          /*background-color: #387ef5;*/
+      }
+
+      .content-md{
+          background-color: #3B3B58;
+          /*background-color: #387ef5;*/
+      }
+
+      .results{
+          color: white;
+      }
+
+      .button-ios-white {
+          color: #3B3B58;
+          font-size: 23px;
+          background-color: #fff;
+      }
+
+      .scanResults {
+        color: white;
+      }
+      
+  }
+
+  /* altenate color #3B3B58 */
+  /* primary color choice #DB7769*/
+
+}
