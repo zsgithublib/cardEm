@@ -8,23 +8,27 @@
 
 <ion-content padding>
 
-	<div *ngIf="name != '' " id="results">
+	<div *ngIf="name != '' " id="results" color="white">
 		<p>{{name}}</p>
 		<p>HEIGHT: {{height}}</p>
 		<p>AGE: {{age}}</p>
 		<p>{{checkit}}</p>
+    <br/>
+    <button ion-button full (click)="reset()" ion-button color="white">Scan Again</button>
 	</div>
 
 	<div *ngIf="name == ''">
     <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/59267-200.png">
 		<button ion-button full (click)="scanCard()" ion-button color="white">Scan ID Card</button>
+
+    <ion-item>
+      <ion-label>Check if user over</ion-label>
+      <ion-select [(ngModel)]="ageToCheck" multiple="false">
+        <ion-option *ngFor="let age of ages" [value]="age">{{age}}</ion-option>
+      </ion-select>
+    </ion-item>
 	</div>
 
-  <ion-item>
-    <ion-label>Check if user over</ion-label>
-    <ion-select [(ngModel)]="ageToCheck" multiple="false">
-      <ion-option *ngFor="let age of ages" [value]="age"></ion-option>
-    </ion-select>
-  </ion-item>
+
 
 </ion-content>
